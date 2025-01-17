@@ -1,33 +1,23 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect } from 'react'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
 
+  useEffect(()=>{
+    setTimeout(()=>{
+      setCount(count => count + 1);
+    }, 1000)
+  }, [count])
+
+  //wihout dependecies callback function will call each time when component state changes
+  //with dependcies it will be only 1 time when state changes or page reload
+  //dependencies with value will call the function when value changes
+
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h2>I will be change in every 1 second : <button>{count}</button></h2>
     </>
   )
 }
