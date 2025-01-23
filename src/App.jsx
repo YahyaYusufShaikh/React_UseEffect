@@ -21,6 +21,7 @@ const todoList = [{
 
 function App() {
   const [count, setCount] = useState(0)
+  const [todo, setTodo] = useState({id: 4,todo:'hello'})
 
   useEffect(()=>{
     setTimeout(()=>{
@@ -36,7 +37,8 @@ function App() {
     <>
       <button>Add 1</button>
       <button>Add 2</button>
-      <button>Add 3</button>
+      {/* <button onClick={()=>{setTodo(todoList['id'])}}>Add 3</button> */}
+      {/* <p>{todo}</p> */}
       <h2>I will be change in every 1 second : <button>{count}</button></h2>
     </>
   )
