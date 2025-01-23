@@ -3,21 +3,21 @@ import { useEffect } from 'react'
 import './App.css'
 
 
-// todoList = [{
-//           id : 1,
-//           todo : 'go to gym',
-//           descriptipn : "go gym at evening"
-//         },
-//         {
-//           id : 2,
-//           todo : "eat food",
-//           descriptipn : 'Briyani'
-//         },
-//       {
-//         id = 3, 
-//         todo : 'Study',
-//         descriptipn: 'Study the Cohort'
-//       }]
+const todoList = [{
+          id : 1,
+          todo : 'go to gym',
+          descriptipn : "go gym at evening"
+        },
+        {
+          id : 2,
+          todo : "eat food",
+          descriptipn : 'Briyani'
+        },
+      {
+        id : 3, 
+        todo : 'Study',
+        descriptipn: 'Study the Cohort'
+      }]
 
 function App() {
   const [count, setCount] = useState(0)
