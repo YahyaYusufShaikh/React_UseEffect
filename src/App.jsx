@@ -1,33 +1,25 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
 import './App.css'
+// import axios from "axios"
 
-
-const todoList = [{
-          id : 1,
-          todo : 'go to gym',
-          descriptipn : "go gym at evening"
-        },
-        {
-          id : 2,
-          todo : "eat food",
-          descriptipn : 'Briyani'
-        },
-      {
-        id : 3, 
-        todo : 'Study',
-        descriptipn: 'Study the Cohort'
-      }]
 
 function App() {
   const [count, setCount] = useState(0)
-  const [todo, setTodo] = useState({id: 4,todo:'hello'})
+  const [todo, setTodo] = useState({})
 
   useEffect(()=>{
     setTimeout(()=>{
       setCount(count => count + 1);
     }, 1000)
-  }, [count])
+  }, [])
+
+  // useEffect(()=>{
+  //   axios.get('http://localhost:3000/')
+  //   .then(response =>{
+  //     setTodo(response.data.todo)
+  //   })
+  // },[])
 
   //wihout dependecies callback function will call each time when component state changes
   //with dependcies it will be only 1 time when state changes or page reload
@@ -36,9 +28,8 @@ function App() {
   return (
     <>
       <button>Add 1</button>
-      <button>Add 2</button>
-      {/* <button onClick={()=>{setTodo(todoList['id'])}}>Add 3</button> */}
-      {/* <p>{todo}</p> */}
+      <button>Add 2</button> 
+      {/* <p>{todo}</p>  */}
       <h2>I will be change in every 1 second : <button>{count}</button></h2>
     </>
   )
